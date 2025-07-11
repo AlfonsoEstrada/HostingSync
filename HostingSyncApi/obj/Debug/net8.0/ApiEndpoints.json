@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "HostingSyncApi.Controllers.User.UserController",
+    "Method": "UserView",
+    "RelativePath": "User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "Domain.Entities.User.Dto.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

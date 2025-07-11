@@ -1,0 +1,6 @@
+@HostingSyncApi_HostAddress = http://localhost:5218
+
+GET {{HostingSyncApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
