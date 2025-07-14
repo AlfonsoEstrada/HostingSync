@@ -28,5 +28,11 @@ namespace HostingSyncApi.Controllers.User
             return Ok(response);
         }
 
+        [HttpGet]
+        public async Task<List<UserDto>> GetUsers()
+        {
+           return await _userService.GetUsers();
+        }
+
     }
 }

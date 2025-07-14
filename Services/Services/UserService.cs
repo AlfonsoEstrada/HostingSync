@@ -20,8 +20,52 @@ namespace Services.Services
 
         public async Task<int> CreateUser(UserDto users)
         {
+            Users user = new()
+            {
+                UserName = users.UserName,
+                Email = users.Email,
+                Password = users.Password,
+                GroupId = users.GroupId,
+                HotelId = users.HotelId,
+                CreatedBy = users.CreatedBy,
+                CreatedDate = users.CreatedDate,
+                ModifiedBy= users.ModifiedBy,
+                ModifiedDate = users.ModifiedDate,
+                IsDeleted = users.IsDeleted,
+                
 
-            return 1;
+            };
+
+            return await _userRepository.CreateUser(user);
+        }
+
+        public async Task<List<UserDto>> GetUsers()
+        {
+            List<Users> users = await _userRepository.GetUsers();
+            List<UserDto> userDtos = new();
+            
+            foreach(var user in users)
+            {
+                UserDto dto = new UserDto()
+                {
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    Password = user.Password,
+                    GroupId = user.GroupId,
+                    HotelId= user.HotelId,
+                    CreatedBy = user.CreatedBy,
+                    CreatedDate = user.CreatedDate,
+                    ModifiedBy= user.ModifiedBy,
+                    ModifiedDate = user.ModifiedDate,
+                    IsDeleted = user.IsDeleted
+                };
+                
+                userDtos.Add(dto);
+
+            }
+            
+            return userDtos;
+                
         }
  
   

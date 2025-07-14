@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.User;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -24,6 +25,10 @@ namespace Repository.Repository.User
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<List<Users>> GetUsers()
+        {
+            return await _context.Users.Where(x => x.IsDeleted == false).ToListAsync();
+        }
 
 
     }

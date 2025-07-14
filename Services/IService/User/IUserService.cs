@@ -11,5 +11,6 @@ namespace Services.IService.User
     public interface IUserService
     {
         Task<int> CreateUser(UserDto user);
+        Task<List<UserDto>> GetUsers();
     }
 }

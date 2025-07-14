@@ -4,21 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities.User.Dto
+namespace Domain.Entities.Group.Dto
 {
-    public class UserDto
+    public class GroupDto
     {
-        public int IdUser { get; set; }
-        public string UserName { get; set; } = default!;
-        public string Email { get; set; } = default!;
-        public string Password { get; set; } = default!;
-        public int? GroupId { get; set; }
-        public int HotelId { get; set; }
+
+        public int IdGroup { get; set; }
+        public string? GroupName { get; set; }
+        public string? Description { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public bool IsDeleted { get; set; }
-
     }
 }
